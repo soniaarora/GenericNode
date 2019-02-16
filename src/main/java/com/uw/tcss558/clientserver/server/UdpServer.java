@@ -9,10 +9,18 @@ import java.net.DatagramSocket;
 
 public class UdpServer implements  Server {
 
-    private final String portNumber;
-    private DataStore dataStore = new InMemoryDataStore();
+    private String portNumber;
+    private DataStore dataStore = InMemoryDataStore.getInstance();
 
+    public UdpServer() {
+        
+    }
+    
     public UdpServer(String portNumber) {
+        this.portNumber = portNumber;
+    }
+    
+    public void setPortNumber(String portNumber) {
         this.portNumber = portNumber;
     }
 

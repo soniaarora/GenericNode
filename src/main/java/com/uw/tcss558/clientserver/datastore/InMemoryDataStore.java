@@ -7,7 +7,19 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class InMemoryDataStore implements DataStore {
     //Using hashmap for storing the data
-    Map<String, String> dataStore = new ConcurrentHashMap();
+    private Map<String, String> dataStore = new ConcurrentHashMap();
+    private static InMemoryDataStore obj;
+    
+    private InMemoryDataStore()
+    {
+        
+    }
+    public static InMemoryDataStore getInstance(){
+        if(obj == null) {
+            obj = new InMemoryDataStore();
+        }
+        return obj;
+    }
 
     @Override
     public String get(String key) {
