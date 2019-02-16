@@ -44,6 +44,7 @@ public class TcpClient implements Client{
             // closing resources
             dis.close();
             dos.close();
+            s.close();
         }
     }
 

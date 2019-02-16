@@ -7,12 +7,18 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class TcpServer implements  Server{
+public class TcpServer implements Server{
 
     private String portNumber;
-    private final DataStore dataStore = new InMemoryDataStore();
+    private final DataStore dataStore = InMemoryDataStore.getInstance();
+    
+    public TcpServer() {}
 
     public TcpServer(String portNumber) {
+        this.portNumber = portNumber;
+    }
+    
+    public void setPortNumber(String portNumber) {
         this.portNumber = portNumber;
     }
 
@@ -48,7 +54,6 @@ public class TcpServer implements  Server{
                 s.close();
                 e.printStackTrace();
             }
-
         }
     }
 }
