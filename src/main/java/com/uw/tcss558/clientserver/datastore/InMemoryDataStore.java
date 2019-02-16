@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class InMemoryDataStore implements DataStore {
+    //Using hashmap for storing the data
     Map<String, String> dataStore = new ConcurrentHashMap();
 
     @Override
