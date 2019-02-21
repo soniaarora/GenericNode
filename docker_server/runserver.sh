@@ -11,4 +11,3 @@
 #RMI Server
 rmiregistry -J-Djava.class.path=GenericNode.jar &
 java -Djava.rmi.server.codebase=file:GenericNode.jar -cp GenericNode.jar com.uw.tcss558.clientserver.main.Application rmis
-
