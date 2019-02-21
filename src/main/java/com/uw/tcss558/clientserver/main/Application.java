@@ -79,8 +79,6 @@ public class Application {
             registry.bind("Rmi", stub);
 
             System.err.println("Server ready");
-            Scanner scanner = new Scanner(System.in);
-            scanner.nextLine();
         } catch (Exception e) {
             System.err.println("Server exception: " + e.toString());
             e.printStackTrace();
@@ -96,9 +94,16 @@ public class Application {
         buf.append("\nuc/tc <address> <port> get <key> UDP/TCP CLIENT: Get an object from store by key");
         buf.append("\nuc/tc <address> <port> del <key> UDP/TCP CLIENT: Delete an object from storeby key");
         buf.append("\nuc/tc <address> <port> store UDP/TCP CLIENT: Display object store");
-        buf.append("\nuc/tc <address> <port> exit UDP/TCP CLIENT: Shutdown server\n");
+        buf.append("\nuc/tc <address> <port> exit UDP/TCP CLIENT: Shutdown server");
+        buf.append("\nrmic <address> put <key> <msg>  RMI CLIENT: Put an object into store");
+        buf.append("\nrmic <address> get <key>  RMI CLIENT: Get an object from store by key");
+        buf.append("\nrmic <address> del <key>  RMI CLIENT: Delete an object from store by key");
+        buf.append("\nrmic <address> store  RMI CLIENT: Display object store");
+        buf.append("\nrmic <address> exit  RMI CLIENT: Shutdown server\n");
+
         buf.append("\nServer:");
-        buf.append("\nus/ts <port> UDP/TCP/TCP-and-UDP SERVER: run server on <port>.");     
+        buf.append("\nus/ts <port> UDP/TCP/TCP-and-UDP SERVER: run server on <port>.");
+        buf.append("\nrmic  RMI Server");
         System.out.println(buf.toString());
     }
 }

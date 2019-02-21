@@ -11,6 +11,9 @@ public class RmiServer implements Rmi
 
     @Override
     public String execute(String cmd)  throws RemoteException {
+        if(cmd.toLowerCase().equals("exit")) {
+            System.exit(1);
+        }
         return parseAndExecuteCommand(cmd);
     }
 
