@@ -6,9 +6,9 @@
 #java -jar GenericNode.jar ts 1234
 
 #UDP Server
-java -jar GenericNode.jar us 1234
+#java -jar GenericNode.jar us 1234
 
 #RMI Server
-#rmiregistry -J-Djava.class.path=GenericNode.jar &
-#java -Djava.rmi.server.codebase=file:GenericNode.jar -cp GenericNode.jar genericnode.GenericNode rmis 
+rmiregistry -J-Djava.class.path=GenericNode.jar &
+java -Djava.rmi.server.codebase=file:GenericNode.jar -cp GenericNode.jar com.uw.tcss558.clientserver.main.Application rmis
 
