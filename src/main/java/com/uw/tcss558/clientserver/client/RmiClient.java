@@ -23,8 +23,7 @@ public class RmiClient implements Client{
             String response = stub.execute(command);
             System.out.println("Server response:\r\n" + response.trim());
         } catch (Exception e) {
-            System.err.println("Client exception: " + e.toString());
-            e.printStackTrace();
+            //System.err.println("Client exception: " + e.toString());
         }
     }
 }

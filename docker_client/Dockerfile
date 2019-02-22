@@ -5,6 +5,7 @@ RUN apt-get install -y net-tools
 COPY GenericNode.jar /
 COPY bigtest_uc.sh /
 COPY bigtest_tc.sh /
+COPY bigtest_rc.sh /
 COPY entrypoint_client.sh /
 ENTRYPOINT ["/entrypoint_client.sh"]
 CMD ["300"]
